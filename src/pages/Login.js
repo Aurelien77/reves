@@ -35,8 +35,9 @@ function Login() {
       <div className="loginContainer">
         <img className="fond" src={logo} alt="Logo" />
 
-        <label>Email:</label>
+        {/*    <label>Email:</label> */}
         <input
+          placeholder="Email"
           type="text"
           onChange={(event) => {
             setemail(event.target.value);
@@ -51,8 +52,9 @@ function Login() {
             setUsername(event.target.value);
           }}
         />
-        <label>Password:</label>
+
         <input
+          placeholder="Password"
           type="password"
           onChange={(event) => {
             setPassword(event.target.value);

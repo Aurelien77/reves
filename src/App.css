@@ -19,6 +19,10 @@ body {
 label {
   color: black;
 }
+.loginContainer input {
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
 .flexifra {
   background-color: black;
   display: flex;
@@ -980,6 +984,7 @@ button {
   flex-direction: column;
   width: 20%;
   height: 30%;
+
   margin-top: 2%;
   border-radius: 80px;
   margin-top: 2%;
