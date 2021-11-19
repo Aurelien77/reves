@@ -21,7 +21,7 @@ function Registration() {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3001/auth", data)
+      .post("https://reves-de-piano.herokuapp.com//auth", data)
 
       .then((error) => {
         console.log(error.data);
