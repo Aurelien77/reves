@@ -27,19 +27,23 @@ function Post2() {
   let history = useHistory();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/postspriv/byId/${id}`).then((response) => {
-      setPostObject(response.data);
-    });
+    axios
+      .get(`https://reves-de-piano.herokuapp.com/postspriv/byId/${id}`)
+      .then((response) => {
+        setPostObject(response.data);
+      });
 
-    axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
-      setComments(response.data);
-    });
+    axios
+      .get(`https://reves-de-piano.herokuapp.com/comments/${id}`)
+      .then((response) => {
+        setComments(response.data);
+      });
   }, []);
 
   const addComment = () => {
     axios
       .post(
-        "http://localhost:3001/comments",
+        "https://reves-de-piano.herokuapp.com/comments",
         {
           commentBody: newComment,
           PostId: id,
@@ -66,7 +70,7 @@ function Post2() {
 
   const deleteComment = (id) => {
     axios
-      .delete(`http://localhost:3001/comments/${id}`, {
+      .delete(`https://reves-de-piano.herokuapp.com/comments/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -80,7 +84,7 @@ function Post2() {
 
   const deletePost = (id) => {
     axios
-      .delete(`http://localhost:3001/postspriv/${id}`, {
+      .delete(`https://reves-de-piano.herokuapp.com/postspriv/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -92,7 +96,7 @@ function Post2() {
     if (option === "title") {
       let newTitle = prompt("Entrer un nouveau titre:");
       axios.put(
-        "http://localhost:3001/postspriv/title",
+        "https://reves-de-piano.herokuapp.com/postspriv/title",
         {
           newTitle: newTitle,
           id: id,
@@ -106,7 +110,7 @@ function Post2() {
     } else {
       let newPostText = prompt("Entrer un nouveau texte:");
       axios.put(
-        "http://localhost:3001/postspriv/postText",
+        "https://reves-de-piano.herokuapp.com/postspriv/postText",
         {
           newText: newPostText,
           id: id,

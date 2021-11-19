@@ -28,7 +28,7 @@ function CreatePost() {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3001/postspriv", data, {
+      .post("https://reves-de-piano.herokuapp.com/postspriv", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {

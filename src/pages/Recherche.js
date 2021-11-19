@@ -12,7 +12,7 @@ function Recherche() {
     if (!localStorage.getItem("accessToken")) {
     } else {
       axios
-        .get("http://localhost:3001/posts", {
+        .get("https://reves-de-piano.herokuapp.com/posts", {
           headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then((response) => {
