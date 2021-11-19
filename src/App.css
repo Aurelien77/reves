@@ -16,6 +16,9 @@ body {
   font-family: "Numans", sans-serif;
   background-color: black;
 }
+label {
+  color: black;
+}
 .flexifra {
   background-color: black;
   display: flex;
