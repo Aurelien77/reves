@@ -37,11 +37,11 @@ function Login() {
 
         {/*    <label>Email:</label> */}
         <input
-          placeholder="Email"
+          placeholder="Pseudo"
           type="text"
           onChange={(event) => {
-            setemail(event.target.value);
-            setUsername("Profil  🎹");
+            /*    setemail(event.target.value); */
+            setUsername(event.target.value);
           }}
         />
 
