@@ -33,12 +33,6 @@ function Profile() {
 
   return (
     <div className="flexgobal">
-      <div className="modif">
-        {" "}
-        <span className="boutonmodif">
-          <button onClick={mode}>📑</button>
-        </span>
-      </div>
       {/*    <button
         onClick={() => {
           history.push("/createpostpriv");

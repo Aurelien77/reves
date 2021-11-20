@@ -68,7 +68,7 @@ function Home() {
   };
 
   return (
-    <div className="containerpost" id="lessonList">
+    <div className="containerpost2" id="lessonList">
       {listOfPosts.map((value, key) => {
         //Map argument de tableau
         return (
