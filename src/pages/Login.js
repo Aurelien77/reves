@@ -5,14 +5,14 @@ import { AuthContext } from "../helpers/AuthContext";
 import logo from "../logos/piano.gif";
 function Login() {
   const [username, setUsername] = useState("");
-  const [email, setemail] = useState("");
+  /* const [email, setemail] = useState(""); */
   const [password, setPassword] = useState("");
   const { setAuthState } = useContext(AuthContext);
 
   let history = useHistory();
 
   const login = () => {
-    const data = { username: username, email: email, password: password };
+    const data = { username: username, /* email: email, */ password: password };
     axios
       .post("https://reves-de-piano.herokuapp.com/auth/login", data)
       .then((response) => {
@@ -22,7 +22,7 @@ function Login() {
           localStorage.setItem("accessToken", response.data.token);
           setAuthState({
             username: response.data.username,
-            email: response.data.email,
+            /*   email: response.data.email, */
             id: response.data.id,
             admin: response.data.admin, //tous ce qui est dans réponse concernant admin
             status: true,
@@ -47,13 +47,13 @@ function Login() {
           }}
         />
 
-        <input
+        {/*   <input
           type="hidden"
           value="Mon Profil"
           onChange={(event) => {
             setUsername(event.target.value);
           }}
-        />
+        /> */}
 
         <input
           placeholder="Password"

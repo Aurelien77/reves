@@ -108,7 +108,7 @@ function Home() {
                 {" "}
                 <Link to={`/profile/${value.UserId}`}>
                   {" "}
-                  Créé par <span className="speudo">{value.username} </span> le
+                  Créé par <span className="pseudo">{value.username} </span> le
                   : {value.createdAt}
                 </Link>
               </div>
@@ -121,7 +121,7 @@ function Home() {
                     likedPosts.includes(value.id) ? "unlikeBttn" : "likeBttn"
                   }
                 />
-                <label> {value.Likes.length}</label>
+                <label className="white"> {value.Likes.length}</label>
               </div>
             </div>
           </div>

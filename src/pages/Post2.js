@@ -128,12 +128,6 @@ function Post2() {
   };
   return (
     <div className="indivi">
-      <div className="modif">
-        {" "}
-        <span className="boutonmodif">
-          <button onClick={mode}>📑</button>
-        </span>
-      </div>
       <div className="postPage">
         <div className="post" id="individual">
           <div

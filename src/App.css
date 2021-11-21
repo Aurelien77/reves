@@ -5,6 +5,7 @@
   display: flex;
   background-color: black;
 } */
+
 html {
   display: grid;
   background-color: black;
@@ -24,6 +25,18 @@ body {
   background-color: black;
   margin: 0px;
   padding: 0px;
+}
+.username a {
+  width: 100%;
+  display: flex;
+  font-size: 18px;
+  word-wrap: none;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.white {
+  color: white;
 }
 .flexpostpriv {
   display: grid;
@@ -72,7 +85,7 @@ label {
 a:link {
   display: flex;
   flex-wrap: nowrap;
-
+  flex-direction: row;
   text-decoration: none;
 }
 .basicinfo3 {
@@ -93,9 +106,11 @@ a:link {
   /*   background-size: cover;
   background: no-repeat, url(./logos/orig.gif); */
 }
-.speudo {
+.pseudo {
   color: #d1515a;
   box-shadow: rgba(5, 25, 52, 2) 0px 2px 8px 0px;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 .boutonmodif {
   display: flex;
@@ -649,7 +664,7 @@ a:link {
 }
 
 .likeBttn {
-  color: rgba(250, 250, 250, 0.8);
+  color: rgba(99, 96, 96, 0.8);
   border-color: #d1515a;
 }
 .unlikeBttn {

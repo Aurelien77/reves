@@ -128,12 +128,6 @@ function Post() {
   };
   return (
     <div className="indivi">
-      <div className="modif">
-        {" "}
-        <span className="boutonmodif">
-          <button onClick={mode}>📑</button>
-        </span>
-      </div>
       <div className="postPage">
         <div className="post" id="individual">
           <div
@@ -217,7 +211,7 @@ function Post() {
               <div key={key} className="comment">
                 {comment.commentBody}
 
-                <label> Posté par {comment.username}</label>
+                <label className="white"> Posté par {comment.username}</label>
                 {(authState.username === comment.username ||
                   authState.admin === true) && (
                   <button
