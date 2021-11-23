@@ -44,6 +44,7 @@ function CreatePost() {
         validationSchema={validationSchema}
       >
         <Form className="formContainer2">
+          <div className="black ">Créer un post PRIVE</div>
           <label>Title: </label>
           <ErrorMessage name="title" component="span" />
           <Field

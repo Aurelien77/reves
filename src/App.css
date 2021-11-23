@@ -7,7 +7,6 @@
 } */
 
 html {
-  display: grid;
   background-color: black;
   margin: 0px;
   padding: 0px;
@@ -15,7 +14,6 @@ html {
   height: 100%;
 }
 body {
-  display: grid;
   margin: 0px;
   width: 1000px;
   width: 100%;
@@ -26,6 +24,19 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+.flexgobal {
+  display: flex;
+  flex-direction: column;
+  flex-direction: row;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px);
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
 .username a {
   width: 100%;
   display: flex;
@@ -35,6 +46,14 @@ body {
   align-items: center;
   justify-content: center;
 }
+.listOfPostsprofil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  flex-wrap: wrap; */
 
 .date {
   display: flex;
@@ -43,6 +62,10 @@ body {
 }
 .white {
   color: white;
+}
+
+.black {
+  color: black;
 }
 .flexpostpriv {
   display: grid;
@@ -95,6 +118,8 @@ a:link {
   text-decoration: none;
 }
 .basicinfo3 {
+  display: flex;
+  flex-direction: row;
   width: 100%;
   height: 100%;
   padding-left: 10%;
@@ -462,6 +487,7 @@ a:link {
   width: 100%;
   height: 100%;
   display: flex;
+
   align-items: center;
   gap: 150px;
   background-repeat: repeat;
@@ -1210,12 +1236,14 @@ button:hover {
     display: flex;
     align-content: center;
     align-items: center;
-    justify-content: center;
+
     flex-direction: column;
     width: 100%;
+    justify-content: stretch;
     height: 100%;
     margin: 0px;
   }
+
   .basicinfo3 .form {
     display: flex;
     flex-direction: column;

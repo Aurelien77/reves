@@ -32,8 +32,16 @@ function Profile() {
   };
 
   return (
-    <div className="flexgobal">
-      {/*    <button
+    <div className="app">
+      <h1> Page de profil public de : {username} </h1>{" "}
+      <div className="profil">
+        <img
+          src={"https://reves-de-piano.herokuapp.com/images/" + photo_profil}
+          alt="profil"
+        />{" "}
+      </div>
+      <div className="flexgobal">
+        {/*    <button
         onClick={() => {
           history.push("/createpostpriv");
         }}
@@ -41,114 +49,94 @@ function Profile() {
         {" "}
         créer Publication privées
       </button> */}
-      <div className="app3">
-        <div className="">
-          <div className="basicinfo3">
-            {" "}
-            <h1> Page de profil de : {username} </h1>
-            <div className="profil">
-              <img
-                src={
-                  "https://reves-de-piano.herokuapp.com/images/" + photo_profil
-                }
-                alt="profil"
-              />{" "}
-            </div>
-            {(authState.username === username || authState.admin === true) && (
-              <>
-                <button
-                  onClick={() => {
-                    history.push("#");
-                  }}
-                >
-                  {" "}
-                  Changer mon mots de passe
-                </button>
 
-                <button
-                  onClick={() => {
-                    history.push("/createpostpriv");
-                  }}
-                >
-                  {" "}
-                  Créer un post privé
-                </button>
-                <form
-                  action={"https://reves-de-piano.herokuapp.com/upload/" + id}
-                  method="POST"
-                  enctype="multipart/form-data"
-                >
-                  <div class="form-group">
-                    <input
-                      type="file"
-                      name="file"
-                      id="input-files"
-                      class="form-control-file border"
-                    />
-                  </div>
+        <div className="basicinfo3">
+          {" "}
+          {(authState.username === username || authState.admin === true) && (
+            <>
+              <button
+                onClick={() => {
+                  history.push("#");
+                }}
+              >
+                {" "}
+                Changer mon mots de passe
+              </button>
 
-                  <button type="submit" class="btn btn-primary">
-                    Soumêtre l'image
-                  </button>
-                </form>
+              <form
+                action={"https://reves-de-piano.herokuapp.com/upload/" + id}
+                method="POST"
+                enctype="multipart/form-data"
+              >
+                <div class="form-group">
+                  <input
+                    type="file"
+                    name="file"
+                    id="input-files"
+                    class="form-control-file border"
+                  />
+                </div>
 
-                <button
-                  onClick={() => {
-                    history.push("/delete");
-                  }}
-                >
-                  {" "}
-                  Supprimer le compte
+                <button type="submit" class="btn btn-primary">
+                  Soumêtre l'image
                 </button>
-              </>
-            )}
-          </div>{" "}
+              </form>
+
+              <button
+                onClick={() => {
+                  history.push("/delete");
+                }}
+              >
+                {" "}
+                Supprimer le compte
+              </button>
+            </>
+          )}
         </div>
+      </div>
+      <div className="listOfPostsprofil">
+        {listOfPosts.map((value, key) => {
+          return (
+            <div key={key} className="post">
+              <div className="title"> {value.title} </div>
+              <div
+                className="body"
+                onClick={() => {
+                  history.push(`/post/${value.id}`);
+                }}
+              >
+                {value.postText}
+              </div>
+              <div className="lien">
+                <iframe
+                  width="100%"
+                  height="200"
+                  src={value.lien}
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
 
-        <div className="listOfPosts">
-          {listOfPosts.map((value, key) => {
-            return (
-              <div key={key} className="post">
-                <div className="title"> {value.title} </div>
-                <div
-                  className="body"
-                  onClick={() => {
-                    history.push(`/post/${value.id}`);
-                  }}
-                >
-                  {value.postText}
-                </div>
-                <div className="lien">
-                  <iframe
-                    width="100%"
-                    height="200"
-                    src={value.lien}
-                    frameborder="0"
-                    allowfullscreen
-                  ></iframe>
-
-                  {/*  <iframe src={value.lien}></iframe> */}
-                  <a target="blank" href={value.lien}>
-                    {value.lien}
-                  </a>
-                </div>
-                <div className="footer">
-                  <div className="username">{value.username}</div>
-                  {value.createdAT}
-                  <div className="buttons">
-                    <div className="cofee">
-                      {" "}
-                      <LocalCafeIcon />
-                    </div>
-
-                    <label> {value.Likes.length}</label>
+                {/*  <iframe src={value.lien}></iframe> */}
+                <a target="blank" href={value.lien}>
+                  {value.lien}
+                </a>
+              </div>
+              <div className="footer">
+                <div className="username">{value.username}</div>
+                {value.createdAT}
+                <div className="buttons">
+                  <div className="cofee">
+                    {" "}
+                    <LocalCafeIcon />
                   </div>
+
+                  <label> {value.Likes.length}</label>
                 </div>
               </div>
-            );
-          })}
-        </div>
-      </div>{" "}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
