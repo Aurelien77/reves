@@ -64,6 +64,15 @@ function Profile() {
                   {" "}
                   Changer mon mots de passe
                 </button>
+
+                <button
+                  onClick={() => {
+                    history.push("/createpostpriv");
+                  }}
+                >
+                  {" "}
+                  Créer un post privé
+                </button>
                 <form
                   action={"https://reves-de-piano.herokuapp.com/upload/" + id}
                   method="POST"

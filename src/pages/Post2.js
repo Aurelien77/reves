@@ -34,7 +34,7 @@ function Post2() {
       });
 
     axios
-      .get(`https://reves-de-piano.herokuapp.com/comments/${id}`)
+      .get(`https://reves-de-piano.herokuapp.com/comments2/${id}`)
       .then((response) => {
         setComments(response.data);
       });
@@ -43,7 +43,7 @@ function Post2() {
   const addComment = () => {
     axios
       .post(
-        "https://reves-de-piano.herokuapp.com/comments",
+        "https://reves-de-piano.herokuapp.com/comments2",
         {
           commentBody: newComment,
           PostId: id,
@@ -70,7 +70,7 @@ function Post2() {
 
   const deleteComment = (id) => {
     axios
-      .delete(`https://reves-de-piano.herokuapp.com/comments/${id}`, {
+      .delete(`https://reves-de-piano.herokuapp.com/comments2/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -150,7 +150,15 @@ function Post2() {
           >
             {postObject.postText}
             <div className="lien">
-              <a target="blank" className="lien" href={postObject.lien}>
+              <iframe
+                height="500px"
+                width="100%"
+                src={postObject.lien}
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+              <a target="blank" href={postObject.lien}>
                 {postObject.lien}
               </a>
             </div>

@@ -149,8 +149,17 @@ function Post() {
             }}
           >
             {postObject.postText}
+
             <div className="lien">
-              <a target="blank" className="lien" href={postObject.lien}>
+              <iframe
+                height="500px"
+                width="100%"
+                src={postObject.lien}
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+              <a target="blank" href={postObject.lien}>
                 {postObject.lien}
               </a>
             </div>

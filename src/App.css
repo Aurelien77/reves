@@ -35,6 +35,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.date {
+  display: flex;
+  color: #3476e0;
+  flex-direction: row-reverse;
+}
 .white {
   color: white;
 }
@@ -245,6 +251,7 @@ a:link {
   align-items: center;
   align-content: center;
   justify-content: center;
+  margin-right: 2%;
 }
 .deco button {
   width: 100%;
@@ -382,6 +389,7 @@ a:link {
   flex-direction: row;
   align-content: center;
   margin-right: 7%;
+  margin-left: 2%;
 }
 
 .coenr {
@@ -1026,7 +1034,7 @@ button {
   justify-content: space-around;
   align-items: center;
   height: 100%;
-  width: 97%;
+  width: 100%;
 }
 
 #individual .body {

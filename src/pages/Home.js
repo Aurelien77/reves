@@ -66,7 +66,7 @@ function Home() {
         }
       });
   };
-
+  const options = { year: "numeric", month: "long", day: "numeric" };
   return (
     <div className="containerpost2" id="lessonList">
       {listOfPosts.map((value, key) => {
@@ -108,8 +108,10 @@ function Home() {
                 {" "}
                 <Link to={`/profile/${value.UserId}`}>
                   {" "}
-                  Créé par <span className="pseudo">{value.username} </span> le
-                  : {value.createdAt}
+                  Créé par <span className="pseudo">
+                    {value.username}{" "}
+                  </span>{" "}
+                  <span className="date">le : {value.createdAt}</span>
                 </Link>
               </div>
               <div className="buttons">
