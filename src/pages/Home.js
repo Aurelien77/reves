@@ -108,9 +108,7 @@ function Home() {
                 {" "}
                 <Link to={`/profile/${value.UserId}`}>
                   {" "}
-                  Créé par <span className="pseudo">
-                    {value.username}{" "}
-                  </span>{" "}
+                  Créé par <div className="pseudo">{value.username} </div>{" "}
                   <span className="date">le : {value.createdAt}</span>
                 </Link>
               </div>

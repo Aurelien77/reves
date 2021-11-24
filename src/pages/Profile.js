@@ -2,8 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../helpers/AuthContext";
-
-import LocalCafeIcon from "@material-ui/icons//LocalCafe";
+import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
+/* import LocalCafeIcon from "@material-ui/icons//LocalCafe"; */
 
 function Profile() {
   let { id } = useParams();
@@ -50,7 +50,7 @@ function Profile() {
         créer Publication privées
       </button> */}
 
-        <div className="basicinfo3">
+        <div className="basicinfo3 ">
           {" "}
           {(authState.username === username || authState.admin === true) && (
             <>
@@ -94,43 +94,47 @@ function Profile() {
           )}
         </div>
       </div>
-      <div className="listOfPostsprofil">
+      <div className="row">
         {listOfPosts.map((value, key) => {
           return (
-            <div key={key} className="post">
-              <div className="title"> {value.title} </div>
-              <div
-                className="body"
-                onClick={() => {
-                  history.push(`/post/${value.id}`);
-                }}
-              >
-                {value.postText}
-              </div>
-              <div className="lien">
-                <iframe
-                  width="100%"
-                  height="200"
-                  src={value.lien}
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
+            <div
+              key={key}
+              className="post2 col-xs-1 col-sm-1 col-md-1 col-lg-3 "
+            >
+              <div className="row">
+                <div className="title"> {value.title} </div>
+                <div
+                  className="body"
+                  onClick={() => {
+                    history.push(`/post/${value.id}`);
+                  }}
+                >
+                  {value.postText}
+                </div>
+                <div className="lien">
+                  <iframe
+                    width="100%"
+                    height="200"
+                    src={value.lien}
+                    frameborder="0"
+                    allowfullscreen
+                  ></iframe>
 
-                {/*  <iframe src={value.lien}></iframe> */}
-                <a target="blank" href={value.lien}>
-                  {value.lien}
-                </a>
-              </div>
-              <div className="footer">
-                <div className="username">{value.username}</div>
-                {value.createdAT}
-                <div className="buttons">
-                  <div className="cofee">
-                    {" "}
-                    <LocalCafeIcon />
+                  {/*  <iframe src={value.lien}></iframe> */}
+                  <a target="blank" href={value.lien}>
+                    {value.lien}
+                  </a>
+                </div>
+                <div className="footer">
+                  <div className="username">{value.username}</div>
+                  {value.createdAT}
+                  <div className="buttons">
+                    <div className="cofee ">
+                      {" "}
+                      <ThumbUpAltIcon />
+                      <label className="labelcof"> {value.Likes.length}</label>
+                    </div>
                   </div>
-
-                  <label> {value.Likes.length}</label>
                 </div>
               </div>
             </div>

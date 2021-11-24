@@ -182,7 +182,7 @@ function Post2() {
         </div>
       </div>
       <div className="rightSide">
-        <div className="addCommentContainer">
+        {/*  <div className="addCommentContainer">
           <Formik
             initialValues={initialValues}
             onClic={addComment}
@@ -190,7 +190,7 @@ function Post2() {
           >
             <Form className="formcommentaire" id="commentaire">
               <label></label>
-              {/*    <ErrorMessage name="commentaire" component="span" /> */}
+                  <ErrorMessage name="commentaire" component="span" /> 
 
               <Field
                 component="textarea"
@@ -211,7 +211,7 @@ function Post2() {
               </button>
             </Form>
           </Formik>
-        </div>
+        </div> */}
         <div className="listOfComments">
           {comments.map((comment, key) => {
             //Map argument de tableau
