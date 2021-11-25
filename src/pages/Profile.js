@@ -99,7 +99,7 @@ function Profile() {
           return (
             <div
               key={key}
-              className="post2 col-xs-1 col-sm-1 col-md-1 col-lg-3 "
+              className="post2 col-xs-1 col-sm-1 col-md-3 col-lg-3 "
             >
               <div className="row">
                 <div className="title"> {value.title} </div>
