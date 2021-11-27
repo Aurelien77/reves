@@ -35,7 +35,7 @@ function CreatePost() {
         history.push("/");
       });
   };
-  //posts BIO
+  //posts BIO +
   return (
     <div className="createPostPage">
       <Formik
