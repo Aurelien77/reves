@@ -25,6 +25,7 @@ function Login() {
             /*   email: response.data.email, */
             id: response.data.id,
             admin: response.data.admin, //tous ce qui est dans réponse concernant admin
+            prof: response.data.prof,
             status: true,
           });
           history.push("/");
