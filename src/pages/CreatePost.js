@@ -56,6 +56,9 @@ function CreatePost() {
           <label>Post: </label>
           <ErrorMessage name="postText" component="span" />
           <Field
+            cols="45"
+            rows="8"
+            component="textarea"
             autocomplete="off"
             id="postText"
             name="postText"
