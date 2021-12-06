@@ -52,7 +52,7 @@ function Profile() {
       </div>
       {/*    <button
         onClick={() => {
-          history.push("/createpostpriv");
+          history.push("/createpostpriv");   commentaire
         }}
       >
         {" "}
