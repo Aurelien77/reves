@@ -15,7 +15,7 @@ function Home() {
       history.push("/login");
     } else {
       axios
-        .get("https://reves-de-piano.herokuapp.com/posts", {
+        .get("https://eleves.herokuapp.com/posts", {
           headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then((response) => {
@@ -33,7 +33,7 @@ function Home() {
   const likeAPost = (postId) => {
     axios
       .post(
-        "https://reves-de-piano.herokuapp.com/likes",
+        "https://eleves.herokuapp.com/likes",
         { PostId: postId },
         { headers: { accessToken: localStorage.getItem("accessToken") } }
       )

@@ -14,7 +14,7 @@ function Login() {
   const login = () => {
     const data = { username: username, /* email: email, */ password: password };
     axios
-      .post("https://reves-de-piano.herokuapp.com/auth/login", data)
+      .post("https://eleves.herokuapp.com/auth/login", data)
       .then((response) => {
         if (response.data.error) {
           alert(response.data.error);
@@ -25,7 +25,6 @@ function Login() {
             /*   email: response.data.email, */
             id: response.data.id,
             admin: response.data.admin, //tous ce qui est dans réponse concernant admin
-            prof: response.data.prof,
             status: true,
           });
           history.push("/");

@@ -28,13 +28,13 @@ function Post() {
 
   useEffect(() => {
     axios
-      .get(`https://reves-de-piano.herokuapp.com/posts/byId/${id}`)
+      .get(`https://eleves.herokuapp.com/posts/byId/${id}`)
       .then((response) => {
         setPostObject(response.data);
       });
 
     axios
-      .get(`https://reves-de-piano.herokuapp.com/comments/${id}`)
+      .get(`https://eleves.herokuapp.com/comments/${id}`)
       .then((response) => {
         setComments(response.data);
       });
@@ -43,7 +43,7 @@ function Post() {
   const addComment = () => {
     axios
       .post(
-        "https://reves-de-piano.herokuapp.com/comments",
+        "https://eleves.herokuapp.com/comments",
         {
           commentBody: newComment,
           PostId: id,
@@ -70,7 +70,7 @@ function Post() {
 
   const deleteComment = (id) => {
     axios
-      .delete(`https://reves-de-piano.herokuapp.com/comments/${id}`, {
+      .delete(`https://eleves.herokuapp.com/comments/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -84,7 +84,7 @@ function Post() {
 
   const deletePost = (id) => {
     axios
-      .delete(`https://reves-de-piano.herokuapp.com/posts/${id}`, {
+      .delete(`https://eleves.herokuapp.com/posts/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -96,7 +96,7 @@ function Post() {
     if (option === "title") {
       let newTitle = prompt("Entrer un nouveau titre:");
       axios.put(
-        "https://reves-de-piano.herokuapp.com/posts/title",
+        "https://eleves.herokuapp.com/posts/title",
         {
           newTitle: newTitle,
           id: id,
@@ -110,7 +110,7 @@ function Post() {
     } else {
       let newPostText = prompt("Entrer un nouveau texte:");
       axios.put(
-        "https://reves-de-piano.herokuapp.com/posts/postText",
+        "https://eleves.herokuapp.com/posts/postText",
         {
           newText: newPostText,
           id: id,

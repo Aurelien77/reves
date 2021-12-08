@@ -28,13 +28,13 @@ function Post2() {
 
   useEffect(() => {
     axios
-      .get(`https://reves-de-piano.herokuapp.com/postspriv/byId/${id}`)
+      .get(`https://eleves.herokuapp.com/postspriv/byId/${id}`)
       .then((response) => {
         setPostObject(response.data);
       });
 
     axios
-      .get(`https://reves-de-piano.herokuapp.com/comments2/${id}`)
+      .get(`https://eleves.herokuapp.com/comments2/${id}`)
       .then((response) => {
         setComments(response.data);
       });
@@ -43,7 +43,7 @@ function Post2() {
   const addComment = () => {
     axios
       .post(
-        "https://reves-de-piano.herokuapp.com/comments2",
+        "https://eleves.herokuapp.com/comments2",
         {
           commentBody: newComment,
           PostId: id,
@@ -70,7 +70,7 @@ function Post2() {
 
   const deleteComment = (id) => {
     axios
-      .delete(`https://reves-de-piano.herokuapp.com/comments2/${id}`, {
+      .delete(`https://eleves.herokuapp.com/comments2/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -84,7 +84,7 @@ function Post2() {
 
   const deletePost = (id) => {
     axios
-      .delete(`https://reves-de-piano.herokuapp.com/postspriv/${id}`, {
+      .delete(`https://eleves.herokuapp.com/postspriv/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -96,7 +96,7 @@ function Post2() {
     if (option === "title") {
       let newTitle = prompt("Entrer un nouveau titre:");
       axios.put(
-        "https://reves-de-piano.herokuapp.com/postspriv/title",
+        "https://eleves.herokuapp.com/postspriv/title",
         {
           newTitle: newTitle,
           id: id,
@@ -110,7 +110,7 @@ function Post2() {
     } else {
       let newPostText = prompt("Entrer un nouveau texte:");
       axios.put(
-        "https://reves-de-piano.herokuapp.com/postspriv/postText",
+        "https://eleves.herokuapp.com/postspriv/postText",
         {
           newText: newPostText,
           id: id,

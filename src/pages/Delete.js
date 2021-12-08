@@ -15,7 +15,7 @@ function Delete() {
 
   useEffect((id) => {
     axios
-      .delete(`https://reves-de-piano.herokuapp.com/delete/${authState.id}`)
+      .delete(`https://eleves.herokuapp.com/delete/${authState.id}`)
 
       .then(() => {
         localStorage.removeItem("accessToken");

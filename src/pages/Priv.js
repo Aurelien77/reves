@@ -15,14 +15,14 @@ function Profile() {
 
   useEffect(() => {
     axios
-      .get(`https://reves-de-piano.herokuapp.com/auth/postspriv/${id}`)
+      .get(`https://eleves.herokuapp.com/auth/postspriv/${id}`)
       .then((response) => {
         setUsername(response.data.username);
         setphoto_profil(response.data.photo_profil);
       });
 
     axios
-      .get(`https://reves-de-piano.herokuapp.com/postspriv/byuserId/${id}`)
+      .get(`https://eleves.herokuapp.com/postspriv/byuserId/${id}`)
       .then((response) => {
         setListOfPosts(response.data);
       });
@@ -46,9 +46,7 @@ function Profile() {
             <h1> Page de profil de : {username} </h1>
             <div className="profil">
               <img
-                src={
-                  "https://reves-de-piano.herokuapp.com/images/" + photo_profil
-                }
+                src={"https://eleves.herokuapp.com/images/" + photo_profil}
                 alt="profil"
               />{" "}
             </div>
@@ -71,7 +69,7 @@ function Profile() {
                   Changer mon mots de passe
                 </button>
                 <form
-                  action={"https://reves-de-piano.herokuapp.com/upload/" + id}
+                  action={"https://eleves.herokuapp.com/upload/" + id}
                   method="POST"
                   enctype="multipart/form-data"
                 >

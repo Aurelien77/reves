@@ -21,7 +21,7 @@ function Registration() {
 
   const onSubmit = (data) => {
     axios
-      .post("https://reves-de-piano.herokuapp.com/auth", data)
+      .post("https://eleves.herokuapp.com/auth", data)
 
       .then((error) => {
         console.log(error.data);

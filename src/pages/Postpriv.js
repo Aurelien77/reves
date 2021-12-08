@@ -15,14 +15,14 @@ function Postpriv() {
 
   useEffect(() => {
     axios
-      .get(`https://reves-de-piano.herokuapp.com/auth/postpriv/${id}`)
+      .get(`https://eleves.herokuapp.com/auth/postpriv/${id}`)
       .then((response) => {
         setUsername2(response.data.username);
         setphoto_profil2(response.data.photo_profil);
       });
 
     axios
-      .get(`https://reves-de-piano.herokuapp.com/posts/byuserIdpriv/${id}`)
+      .get(`https://eleves.herokuapp.com/posts/byuserIdpriv/${id}`)
       .then((response) => {
         setListOfPosts2(response.data);
       });
@@ -36,7 +36,7 @@ function Postpriv() {
       <h1> Fiche de : {username} </h1>{" "}
       <div className="profil">
         <img
-          src={"https://reves-de-piano.herokuapp.com/images/" + photo_profil}
+          src={"https://eleves.herokuapp.com/images/" + photo_profil}
           alt="profil"
         />{" "}
       </div>

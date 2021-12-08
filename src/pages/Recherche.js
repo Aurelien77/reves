@@ -12,7 +12,7 @@ function Recherche() {
     if (!localStorage.getItem("accessToken")) {
     } else {
       axios
-        .get("https://reves-de-piano.herokuapp.com/posts", {
+        .get("https://eleves.herokuapp.com/posts", {
           headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then((response) => {

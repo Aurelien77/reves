@@ -28,14 +28,14 @@ function CreatePost() {
 
   const onSubmit = (data) => {
     axios
-      .post("https://reves-de-piano.herokuapp.com/postspriv", data, {
+      .post("https://eleves.herokuapp.com/postspriv", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
         history.push("/");
       });
   };
-  //posts BIO +
+
   return (
     <div className="createPostPage">
       <Formik
@@ -56,9 +56,6 @@ function CreatePost() {
           <label>Post: </label>
           <ErrorMessage name="postText" component="span" />
           <Field
-            cols="45"
-            rows="8"
-            component="textarea"
             autocomplete="off"
             id="postText"
             name="postText"

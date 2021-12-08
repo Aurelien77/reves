@@ -28,7 +28,7 @@ function CreatePost() {
 
   const onSubmit = (data) => {
     axios
-      .post("https://reves-de-piano.herokuapp.com/posts", data, {
+      .post("https://eleves.herokuapp.com/posts", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -56,9 +56,6 @@ function CreatePost() {
           <label>Post: </label>
           <ErrorMessage name="postText" component="span" />
           <Field
-            cols="45"
-            rows="8"
-            component="textarea"
             autocomplete="off"
             id="postText"
             name="postText"

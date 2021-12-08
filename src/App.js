@@ -26,13 +26,13 @@ function App() {
     email: "",
     id: 0,
     photo_profil: "",
-    prof: "",
+
     status: false,
   });
 
   useEffect(() => {
     axios
-      .get("https://reves-de-piano.herokuapp.com/auth/auth", {
+      .get("https://eleves.herokuapp.com/auth/auth", {
         //backend : auth(app)/auth(route)
         headers: {
           accessToken: localStorage.getItem("accessToken"),
@@ -47,7 +47,6 @@ function App() {
             id: response.data.id,
             photo_profil: response.data.photo_profil,
             email: response.data.email,
-            prof: response.data.prof,
             status: true,
           });
         }
@@ -56,7 +55,7 @@ function App() {
 
   const logout = () => {
     localStorage.removeItem("accessToken");
-    setAuthState({ email: "", username: "", prof: "", id: 0, status: false });
+    setAuthState({ email: "", username: "", id: 0, status: false });
   };
 
   return (
@@ -65,38 +64,15 @@ function App() {
         <Router>
           <div className="flex3">
             <div className="usernameaccueil">
-              {/*     <h1>
+              <h1>
                 <Link to={`/profile/${authState.id}`}>
                   {authState.username}
                 </Link>
-              </h1> */}
-              <h1>
-                {authState.prof && (
-                  <Link to={`/profile/${authState.id}`}>
-                    {authState.username}
-                  </Link>
-                )}{" "}
               </h1>{" "}
             </div>{" "}
-            {/*         <div className="principal">
-
-            {(authState.username === username || authState.admin === true) && (
-          <>
-            <button
-              onClick={() => {
-                history.push("#");
-              }}
-            >
-              {" "}
-              Changer mon mots de passe
-            </button>
-
-          </>
-        )}
-      </div> */}
             <div className="principal">
               <div className="primary">
-                {authState.prof && (
+                {authState.status && (
                   <Link to="/createpost"> 🎵Créer un Post Public</Link>
                 )}
               </div>
