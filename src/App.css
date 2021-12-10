@@ -685,8 +685,6 @@ a:link {
 .post3 {
   display: flex;
 
-  height: 100%;
-
   border-radius: 10px;
   flex-direction: column;
   align-items: center;
@@ -1155,16 +1153,16 @@ h3 {
 .postPage {
   display: flex;
   width: 80%;
+
   flex-direction: row;
 }
 
 .indivi {
-  height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
   place-items: center;
   /* background-size: cover; */
-  width: 70%;
+  width: 95%;
 }
 
 .rightSide {
@@ -1575,7 +1573,30 @@ button:hover {
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 700px) {
   .lien {
+    display: flex;
+    color: #122441;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    width: 100%;
+    height: 200px;
+    text-align: justify;
+    white-space: normal;
+    padding: 1%;
+    background-size: cover;
+    background-size: 100%;
+  }
+  .lien a {
+    width: 100%;
     height: 100px;
-    margin-bottom: 28%;
+    flex-direction: column;
+    display: flex;
+    color: black;
+    margin: 0px;
+    align-items: center;
+    font-size: 20px;
+
+    white-space: normal;
+    overflow: hidden;
   }
 }
