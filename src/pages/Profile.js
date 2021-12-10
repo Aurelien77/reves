@@ -101,46 +101,50 @@ function Profile() {
           </>
         )}
       </div>
-      {listOfPosts.map((value, key) => {
-        return (
-          <div key={key} className="post3 ">
-            <div className="title"> {value.title} </div>
-            <div
-              className="body"
-              onClick={() => {
-                history.push(`/post/${value.id}`);
-              }}
-            >
-              {value.postText}
-            </div>
-            <div className="lien">
-              <iframe
-                width="100%"
-                height="200"
-                src={value.lien}
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
+      <div className="containerpostflex">
+        {listOfPosts.map((value, key) => {
+          return (
+            <div key={key} className="post3 ">
+              <div className="title"> {value.title} </div>
+              <div
+                className="body"
+                onClick={() => {
+                  history.push(`/post/${value.id}`);
+                }}
+              >
+                {value.postText}
+              </div>
+              <div className="lien">
+                <iframe
+                  width="100%"
+                  height="200"
+                  src={value.lien}
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
 
-              {/*  <iframe src={value.lien}></iframe> */}
-              <a target="blank" href={value.lien}>
-                {value.lien}
-              </a>
-            </div>
-            <div className="footer">
-              <div className="username">{value.username}</div>
-              {value.createdAT}
-              <div className="buttons">
-                <div className="cofee ">
-                  {" "}
-                  <ThumbUpAltIcon />
-                  <label className="labelcof"> {value.Likes.length}</label>
+                {/*  <iframe src={value.lien}></iframe> */}
+                <a target="blank" href={value.lien}>
+                  {value.lien}
+                </a>
+              </div>
+              <div className="footer">
+                <div className="username">
+                  {value.username} le {value.createdAt}
+                </div>
+
+                <div className="buttons">
+                  <div className="cofee ">
+                    {" "}
+                    <ThumbUpAltIcon />
+                    <label className="labelcof"> {value.Likes.length}</label>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }

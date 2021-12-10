@@ -591,7 +591,10 @@ a:link {
   width: 100%;
   align-items: center;
 }
-
+.containerpostflex {
+  display: flex;
+  flex-direction: column-reverse;
+}
 .post {
   display: flex;
   width: 60%;
@@ -1151,7 +1154,7 @@ h3 {
 /*POST INDIVIDUEL  */
 .postPage {
   display: flex;
-
+  width: 80%;
   flex-direction: row;
 }
 
@@ -1250,6 +1253,7 @@ button {
   display: flex;
   height: 100%;
   width: 100%;
+  text-align: center;
 }
 
 /* LOGIN */
@@ -1485,5 +1489,93 @@ button:hover {
     flex-direction: column;
     margin-left: 5%;
     margin-right: 5%;
+  }
+
+  .post {
+    display: flex;
+    width: 60%;
+    height: 100%;
+
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 3%;
+    color: black;
+    border: 1px solid #d1515a;
+    font-family: Arial, Helvetica, sans-serif;
+
+    box-shadow: rgba(15, 15, 12, 2) 0px 2px 8px 0px;
+    border-radius: 15px;
+    background-color: white;
+    /* background-image: url(./logos/icon.svg); */
+  }
+
+  .post:hover {
+    box-shadow: rgba(248, 248, 250, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+  }
+  .post .title {
+    background-color: #122441;
+    display: flex;
+    place-content: center;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100%;
+    padding: 2%;
+    box-shadow: rgba(13, 13, 14, 0.2) 0px 7px 29px 0px;
+    font-size: 20px;
+  }
+
+  .post .body {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 2%;
+    font-weight: 500;
+    background-color: #f7fdfd;
+    color: black;
+    white-space: pre-line;
+  }
+
+  .post .footer {
+    /* border-top: 1px solid #d1515a; */
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    padding: 1%;
+    align-items: center;
+    padding-left: 15px;
+    background-color: #122441;
+    color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .containerpost2 {
+    display: flex;
+    flex-direction: column-reverse;
+    /*  background-size: cover; */
+    /*   background-image: url(./logos/formes.gif); */
+    background-image: url(./logos/formes.gif);
+    background-position: center bottom, left top;
+    background-repeat: repeat;
+    width: 100%;
+
+    align-items: center;
+  }
+}
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 700px) {
+  .lien {
+    height: 100px;
+    margin-bottom: 28%;
   }
 }

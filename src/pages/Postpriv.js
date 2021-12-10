@@ -94,47 +94,51 @@ function Postpriv() {
           )}
         </div>
       </div>
-      {listOfPosts.map((value, key) => {
-        return (
-          <div key={key} className="post3 margin">
-            <div className="title"> {value.title} </div>
-            <div
-              className="body"
-              onClick={() => {
-                history.push(`/postrpiv/${value.id}`);
-              }}
-            >
-              {value.postText}
-            </div>
-            <div className="lien">
-              <iframe
-                width="100%"
-                height="200"
-                src={value.lien}
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
+      <div className="containerpostflex">
+        {listOfPosts.map((value, key) => {
+          return (
+            <div key={key} className="post3 margin">
+              <div className="title"> {value.title} </div>
+              <div
+                className="body"
+                onClick={() => {
+                  history.push(`/postrpiv/${value.id}`);
+                }}
+              >
+                {value.postText}
+              </div>
+              <div className="lien">
+                <iframe
+                  width="100%"
+                  height="200"
+                  src={value.lien}
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
 
-              {/*  <iframe src={value.lien}></iframe> */}
-              <a target="blank" href={value.lien}>
-                {value.lien}
-              </a>
-            </div>
-            <div className="footer">
-              <div className="username">{value.username}</div>
-              {value.createdAT}
-              <div className="buttons">
-                {/* <div className="cofee">
+                {/*  <iframe src={value.lien}></iframe> */}
+                <a target="blank" href={value.lien}>
+                  {value.lien}
+                </a>
+              </div>
+              <div className="footer">
+                <div className="username">
+                  {value.username} le {value.createdAt}
+                </div>
+
+                <div className="buttons">
+                  {/* <div className="cofee">
                       {" "}
                       <LocalCafeIcon />
                     </div> */}
 
-                {/*    <label> {value.Likes.length}</label> */}
+                  {/*    <label> {value.Likes.length}</label> */}
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
