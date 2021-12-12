@@ -23,7 +23,12 @@ function CreatePost() {
       .min(8)
       .max(60000)
       .required("Vous devez entrer du texte"),
-    lien: Yup.string().notRequired("Vous pouvez poster sans insérer de lien"),
+    lien: Yup.string()
+      .notRequired("Vous pouvez poster sans insérer de lien")
+      .matches(
+        /((https?):\/\/)?(www.)/,
+        "Entrer une URL correcte sous cette forme : https://www. !"
+      ),
   });
 
   const onSubmit = (data) => {
