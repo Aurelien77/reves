@@ -62,7 +62,7 @@ function CreatePost() {
           <ErrorMessage name="postText" component="span" />
           <Field
             cols="45"
-            rows="8"
+            rows="4"
             component="textarea"
             autocomplete="off"
             id="postText"
