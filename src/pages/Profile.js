@@ -15,14 +15,14 @@ function Profile() {
 
   useEffect(() => {
     axios
-      .get(`https://reves-de-piano.herokuapp.com/auth/basicinfo/${id}`)
+      .get(`https://reves7.herokuapp.com/auth/basicinfo/${id}`)
       .then((response) => {
         setUsername(response.data.username);
         setphoto_profil(response.data.photo_profil);
       });
 
     axios
-      .get(`https://reves-de-piano.herokuapp.com/posts/byuserId/${id}`)
+      .get(`https://reves7.herokuapp.com/posts/byuserId/${id}`)
       .then((response) => {
         setListOfPosts(response.data);
       });
@@ -36,7 +36,7 @@ function Profile() {
       <h1> Page de profil public de : {username} </h1>{" "}
       <div className="profil">
         <img
-          src={"https://reves-de-piano.herokuapp.com/images/" + photo_profil}
+          src={"https://reves7.herokuapp.com/images/" + photo_profil}
           alt="profil"
         />{" "}
       </div>

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
-import logo from "../logos/piano.gif";
+import logo from "../logos/favicon.ico";
 function Login() {
   const [username, setUsername] = useState("");
   /* const [email, setemail] = useState(""); */
@@ -14,7 +14,7 @@ function Login() {
   const login = () => {
     const data = { username: username, /* email: email, */ password: password };
     axios
-      .post("https://reves-de-piano.herokuapp.com/auth/login", data)
+      .post("https://reves7.herokuapp.com//auth/login", data)
       .then((response) => {
         if (response.data.error) {
           alert(response.data.error);

@@ -33,7 +33,7 @@ function CreatePost() {
 
   const onSubmit = (data) => {
     axios
-      .post("https://reves-de-piano.herokuapp.com/posts", data, {
+      .post("hhttps://reves7.herokuapp.com/posts", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
